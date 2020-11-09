@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link href="style/main.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="d-flex">
+
+    <header>
+        <div class="marginal dv-50">
+            <div>
+                <h1 id="title">Website</h1>
+            </div>
+            <div>
+                <div class="vw-desktop h-100">
+                    <nav class="desktop-nav">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about-us.html">About us</a></li>
+                            <li><a onclick="toggleDarkmode()">Dark mode</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="mobile-menu">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about-us.html">About us</a></li>
+                <li><a onclick="toggleDarkmode()">Dark mode</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="marginal h-100">
+            <h1>Hello World</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nisl lorem, porttitor vel nisi nec,
+                dapibus tristique orci. Morbi vitae diam non lacus auctor varius. Duis quis ex purus. Morbi a neque et
+                massa tincidunt porttitor. Proin tincidunt massa eu orci bibendum rutrum. Nulla non faucibus quam, in
+                tincidunt arcu. Aliquam eget varius nisl. Mauris finibus laoreet magna quis condimentum. Donec dapibus
+                semper nulla sit amet congue. Fusce magna enim, semper sit amet mi iaculis, lacinia aliquet lectus. Sed
+                vehicula quis enim et luctus.
+                <br /><br />
+                Phasellus semper porttitor arcu. Suspendisse dolor eros, aliquam eu metus non, molestie fermentum dolor.
+                Ut eu pharetra sem. Sed iaculis elit nulla, sit amet consequat ligula pulvinar id. Duis at dapibus mi.
+                Ut nunc dolor, porta quis ipsum vitae, lobortis efficitur nulla. Cras efficitur metus non ante
+                </p>
+
+                <button class="styled-btn">Buy now ($3200)</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="marginal">
+            <p>2020 &copy; Jacob Wennebro</p>
+        </div>
+    </footer>
+
+    <script>
+        if (localStorage.getItem("darktheme") === "true") document.body.classList.add("dark");
+
+        const toggleDarkmode = () => {
+            const body = document.body;
+            if (body.classList.contains("dark")) {
+                body.classList.remove("dark");
+                localStorage.setItem("darktheme", "false");
+            } else {
+                body.classList.add("dark");
+                localStorage.setItem("darktheme", "true");
+            }
+        }
+    </script>
+</body>
+
+</html>
